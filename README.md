@@ -2,6 +2,8 @@
 
 (fork vue-json-editor - credits original: [https://github.com/dirkliu/vue-json-editor](https://github.com/dirkliu/vue-json-editor))
 
+(fork vue3-json-editor - joaomede: [https://github.com/joaomede/vue3-json-editor](https://github.com/joaomede/vue3-json-editorr))
+
 A json editor of vue.js
 
 # Support
