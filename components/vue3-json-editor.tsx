@@ -4,7 +4,8 @@ import {
   getCurrentInstance,
   onMounted,
   reactive,
-  watch
+  watch,
+  nextTick
 } from "vue";
 import JsonEditor from "./assets/jsoneditor";
 import "./assets/jsoneditor.css";
@@ -33,9 +34,8 @@ export const Vue3JsonEditor = defineComponent({
       default: "en"
     }
   },
+  emit: ["update:modelValue", "json-change", "has-error", "input", "json-save"],
   setup(props: any, { emit, expose }) {
-    const root = getCurrentInstance()?.root.proxy as ComponentPublicInstance;
-
     const state = reactive({
       editor: null as any,
       error: false,
@@ -66,7 +66,7 @@ export const Vue3JsonEditor = defineComponent({
           expandAll();
         }
       },
-      { immediate: true }
+      { immediate: true, deep: true }
     );
 
     onMounted(() => {
@@ -81,7 +81,8 @@ export const Vue3JsonEditor = defineComponent({
             emit("json-change", json);
             state.internalChange = true;
             emit("input", json);
-            root.$nextTick(function() {
+            emit("update:modelValue", json);
+            nextTick(function() {
               state.internalChange = false;
             });
           } catch (e) {
