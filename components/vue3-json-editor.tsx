@@ -66,7 +66,7 @@ export const Vue3JsonEditor = defineComponent({
           expandAll();
         }
       },
-      { immediate: true }
+      { immediate: true, deep: true }
     );
 
     onMounted(() => {
