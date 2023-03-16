@@ -39,7 +39,7 @@ v-model：bind the [json object]
 ## 1. Install using npm
 
 ```
-npm install vue3-json-editor --save
+npm install @dangojs/vue3-json-editor --save
 ```
 
 ## 2. Use vue-json-editor in the vue component
@@ -59,7 +59,7 @@ npm install vue3-json-editor --save
 
 <script>
 import { defineComponent, reactive, toRefs } from 'vue'
-import { Vue3JsonEditor } from 'vue3-json-editor'
+import { Vue3JsonEditor } from '@dangojs/vue3-json-editor'
 
 export default defineComponent({
   components: {
@@ -92,7 +92,7 @@ export default defineComponent({
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
-import { Vue3JsonEditor } from '../dist/vue3-json-editor.esm'
+import { Vue3JsonEditor } from '@dangojs/vue3-json-editor'
 
 export default defineComponent({
   name: 'App',
